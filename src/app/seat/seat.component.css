@@ -1,0 +1,94 @@
+#holder {
+    height: 500px;
+    width: 500px;
+    background-color:white;
+    border: 1px solid #A4A4A4;
+    margin-left: 10px;
+}
+
+#place {
+    position: relative;
+    margin: 20px;
+}
+
+    #place a {
+        font-size: 0.6em;
+        color: white;
+    }
+
+    #place li {
+        list-style: none outside none;
+        position: absolute;
+    }
+
+        #place li:hover {
+            background-color: yellow;
+        }
+
+    /* #place .seat {
+        background: url("assets/newAvailableSeat.png") no-repeat scroll 0 0 transparent;
+        height: 33px;
+        width: 33px;
+        display: block;
+    }
+
+    #place .selectedSeat {
+        background-image: url("assets/bookedseats.png");
+    }
+
+    #place .selectingSeat {
+        background-image: url("assets/newSelectedSeat.png");
+    }
+
+    #place .ladiesSeat {
+        background-image: url("assets/ladiesSeat.png");
+    }
+
+    #place .notAvailableSeats {
+        background-image: url("assets/notAvailableSeat.png");
+    }
+
+    #place .BlockedSeats {
+        background-image: url("assets/BlockedSeat.png");
+    } */
+
+ /*    #place .AvailableSeats {
+        background-image: url("assets/newAvailableSeat.png");
+    }  */
+ 
+    #place .row-3, #place .row-4 {
+        margin-top: 10px;
+    }
+
+#seatDescription li {
+    vertical-align: middle;
+    list-style: none outside none;
+    padding-left: 35px;
+    height: 35px;
+    float: left;
+}
+
+.details {
+    display: none;
+    visibility: hidden;
+    background-color: #eeeeee;
+    font-family: Verdana;
+}
+
+.inlineList {
+    display: flexbox;
+    flex-direction: row;
+    /* Below sets up your display method: flex-start|flex-end|space-between|space-around */
+    justify-content: flex-start;
+    /* Below removes bullets and cleans white-space */
+    list-style: none;
+    padding: 0;
+    /* Bonus: forces no word-wrap */
+    white-space: nowrap;
+}
+
+.LiStstyle {
+    Width: 50px;
+    Height: 50px;
+}
+

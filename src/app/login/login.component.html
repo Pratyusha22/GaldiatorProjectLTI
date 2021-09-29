@@ -1,0 +1,55 @@
+<div [ngStyle]="{'background-color':'azure'}"><div id="regbody" [align]="'center'"> 
+    <h3 [align]="'center'">Login</h3><br><br>
+    <form [formGroup]="ContactForm" (ngSubmit)="Login()" id="form" >
+        <p >
+            
+            <input type="text"  class="textbox"   placeholder="UserName " id="UserName" required   
+             name="UserName" formControlName="UserName"/>
+        </p>
+        
+        <p>
+                
+                <input type="password" class="textbox" placeholder="Password" id="Password"  name="Password"  required  formControlName="Password"/>
+        </p>
+        <div>
+
+            <p style="color:#E92626;font-size:20px;font-weight:normal" Class="success" [align]="'left'">  
+                {{errorMessage}}  
+              </p>  
+        </div>
+            <!-- <div *ngIf="!Password?.valid && (Password?.dirty || Password?.touched)" class="error">
+                <div *ngIf="Password?.errors?.pattern">
+                    should contain one number,one character and one special
+                    character
+                </div>
+            </div>
+            <div *ngIf="Password?.errors?.minlength">
+                Too short
+            </div>
+            <div *ngIf="!Password?.valid && (Password?.dirty || Password?.touched)" class="error">
+                <div *ngIf="Password?.errors?.required">
+                Please enter Password 
+                </div>
+            </div> -->
+    
+            
+    
+    
+    <div >
+            <input type="submit"  id="regbtn"  value="Login" >
+        </div>
+
+        <div class="checkbox">
+            <label><input type="checkbox" name="remember"> Remember me</label>
+        </div>
+        <div [align]="'center'">
+            <button type="button">Cancel</button>
+        </div><br>
+        <div [align]="'center'">
+            <a routerLink='ForgetPassword'>Forgot Password ?</a>
+        </div>
+        <div>
+            <h3>Don't Have an account ?</h3><a routerLink= 'Sign-Up'>Sign Up</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+<div [ngStyle]="{'background-color':'azure'}"><table>
+    <tr>
+        <td><h3>Travels</h3></td>
+        <td><h3>From</h3></td>
+        <td><h3>Date</h3></td>
+        <td><h3>Arrival</h3></td>
+        <td><h3>Departure</h3></td>
+        <td><h3>To</h3></td>
+        <td><h3>Seats Available</h3></td>
+        <td><h3>Fare</h3></td>
+        <td> </td>
+    </tr>
+
+<tr *ngFor="let a of data">
+    <td>{{travels}}</td>
+    <td>{{a.from}}</td>
+    <td>{{a.date}}</td>
+    <td>{{a.arrival}}</td>
+    <td>{{a.departure}}</td>
+    <td>{{a.to}}</td>
+    <td>{{a.seatsavilable}}</td>
+    <td>{{a.fare}}</td>
+    <td><input  type="button" id="button" value="View Seats" routerLink='Seat'></td></tr></table></div>
+

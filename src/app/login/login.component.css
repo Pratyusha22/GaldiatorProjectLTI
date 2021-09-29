@@ -1,0 +1,26 @@
+#regbody{
+    background-color: white;
+   
+    padding: 10px;
+}
+
+#form{
+    width: 300px;
+    text-align: left;
+
+}
+#regbtn{
+  background-color: darkblue;
+color: white;
+
+width: 90%;
+height: 40px;
+}
+.textbox{
+  height: 30px;
+  width: 90%;
+  border-width: 0.1px;
+  padding: 5px 5px 5px 22px;
+  border-color: lightgray;
+  
+}

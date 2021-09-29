@@ -1,0 +1,45 @@
+.myButton {
+	background-color:#005eff;
+	border-radius:5px;
+	border:1px solid #0040ff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:11px 23px;
+}
+
+button {
+  background-color: #0882f5;
+  color: white;
+  padding: 10px 70px;
+  
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.dateinput
+{
+    background-color: #0882f5;
+  color: white;
+  padding: 10px 70px;
+ 
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.form-select
+{
+  background-color: #0882f5;
+  color: white;
+  padding: 11px 70px;
+
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  opacity: 0.8;
+}

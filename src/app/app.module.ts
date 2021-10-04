@@ -29,6 +29,8 @@ import { HIreBusComponent } from './hire-bus/hire-bus.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { AdminforgotpasswordComponent } from './adminforgotpassword/adminforgotpassword.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EnterpassengerdetailsComponent } from './enterpassengerdetails/enterpassengerdetails.component';
+import { SeatconfirmationComponent } from './seatconfirmation/seatconfirmation.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HIreBusComponent,
     AdmindashboardComponent,
     AdminforgotpasswordComponent,
+    EnterpassengerdetailsComponent,
+    SeatconfirmationComponent,
   ],
   imports: [
     BrowserModule,

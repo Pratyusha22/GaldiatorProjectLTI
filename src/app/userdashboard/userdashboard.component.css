@@ -1,4 +1,4 @@
-ul {
+/* ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -33,7 +33,7 @@ ul {
   }
   
   /* The actual popup (appears on top) */
-  .popup .popuptext {
+  /* .popup .popuptext {
     visibility: hidden;
     width: 160px;
     background-color: #555;
@@ -46,10 +46,10 @@ ul {
     bottom: 125%;
     left: 50%;
     margin-left: -80px;
-  }
+  } */
   
   /* Popup arrow */
-  .popup .popuptext::after {
+  /* .popup .popuptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -58,17 +58,17 @@ ul {
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
-  }
+  } */
   
   /* Toggle this class when clicking on the popup container (hide and show the popup) */
-  .popup .show {
+  /* .popup .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s
-  }
+  } */
   
   /* Add animation (fade in the popup) */
-  @-webkit-keyframes fadeIn {
+  /* @-webkit-keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
   }
@@ -76,4 +76,52 @@ ul {
   @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity:1 ;}
+  }  */
+
+
+   table {
+    border-collapse: collapse;
+    width: 100%;
   }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #DDD;
+  }
+  
+  tr:hover {background-color: #D6EEEE;} 
+
+  table {
+    border: 1px solid #2f97ff;
+}
+        .ticket {
+            border: 1px solid rgb(93, 150, 255);
+    box-shadow: 1px 0px 9px 2px rgb(70, 181, 255);
+    margin: 26px;
+        }
+        .ticket table {
+            border: none
+        }
+
+        .ticket table thead {
+            border: none;
+            background: #90badd;
+            font-weight: bold
+        }
+        .ticket  table td {
+            border: none;
+        }
+
+        .ticket table.ps_details {
+            border: 1px solid rgb(159, 187, 211);
+        }
+
+        .ticket table.ps_details span {
+            color: #424242;
+            font-size: 12px;
+            padding: 0 6px;
+        }
+        @media print{
+            .doNotPrint{display:none !important;}
+          }

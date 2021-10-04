@@ -55,10 +55,7 @@ export class SignUpComponent implements OnInit {
   {
     return this.ContactForm.get('Password');
   }
-  get ConfirmPassword()
-  {
-    return this.ContactForm.get('ConfirmPassword');
-  }
+ 
   get CustomerContact()
   {
     return this.ContactForm.get('CustomerContact');

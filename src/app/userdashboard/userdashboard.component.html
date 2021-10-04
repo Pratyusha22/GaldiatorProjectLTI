@@ -1,4 +1,4 @@
-
+<!-- 
 <ul>
     <li><a  routerLink='Profile'>Profile</a></li>
     <li><a routerLink='Previous Booking'>Previous Booking</a></li>
@@ -57,4 +57,108 @@
   </div>
   
   
-  
+   -->
+
+
+
+   <div [ngStyle]="{'background-color':'azure'}"><table>
+    <tr>
+      <th>Booking Id</th>
+      <th>Starting Point</th>
+      <th>Destination</th>
+      <th>Departure Time</th>
+      <th>Arrival Time</th>
+      <th>Date of Journey</th>
+      <th>Number of Seats</th>
+      <th>Total Amount</th>
+      <th>Booking Status</th>
+    </tr>
+    <tr *ngFor="let a of bookingList">
+      <td>{{a.bookingId}}</td>
+      <td>{{a.startingpt}}</td>
+      <td>{{a.destination}}</td>
+      <td>{{a.departureTime}}</td>
+      <td>{{a.arrivalTime}}</td>
+      <td>{{a.scheduledDate}}</td>
+      <td>{{a.numberOfSeats}}</td>
+      <td>{{a.totalAmount}}</td>
+        <ng-container *ngIf="a.bookingStatus===1; then confirmed; else cancelled">
+      </ng-container>
+      <ng-template #confirmed>
+        <td>Confirmed</td>
+      </ng-template>
+      <ng-template #cancelled>
+        <td>Cancelled</td>
+      </ng-template>
+      <td><input  type="button" (click)="getTicket(a.bookingId)" id="button" value="Print Ticket" ></td>
+      <td><input type="button" (click)="cancelBooking(a.bookingId)" id="button" value="Cancel Booking" ></td></tr>
+      </table></div>
+      <ng-container *ngIf="show">
+        <div class="container" *ngFor="let a of ticketDetails">
+          <div class="row justify-content-center">
+            <div class="col-md-10 ticket ">
+              <strong><i class="fa fa-bus"></i></strong>
+                <h6 class="text-center pt-3 pb-3 "><b> Online Reservation</b></h6>
+                <table class="table"> 
+           <thead>
+            <td class="text-capitalize"> <i> From </i> {{a.startingpt}} <i> To </i> {{a.destination}} </td>
+            <td style="text-align:center"><strong>LTI Travels</strong></td> 
+            <td style="text-align:right"> &nbsp;  &nbsp; Journey On: {{a.scheduledDate}}</td>
+           
+           </thead>  
+                </table>
+                <table class="table ps_details">
+                  <tr>
+                    <th>Passenger Name and Contact</th>
+                    <th>Booking Id</th>
+                    <th>Number of Seats</th>
+                    <th>Total Fare</th>
+                    
+                  </tr>
+                  <tr>
+                    <td><b>{{a.customerName}}</b> <br>
+                      {{a.customerContact}} <br>
+                      <span></span>
+                    </td>
+        
+                    <td>{{a.bookingId}}</td>
+                    <td >
+                     <span>{{a.numberOfSeats}}</span> 
+                    </td>
+                    <td>{{a.totalAmount}}</td>
+                  </tr>
+                </table>
+                <table class="table ps_details ">
+                  <tr>
+                    <th>Booking Status</th>
+                    <th>Bus Number</th>
+                    <th>Reporting Time </th>
+                    <th>Departure Time</th>
+                    
+                  </tr>
+                  <tr>
+                    <td>
+                    <span><em> <ng-container *ngIf="a.bookingStatus===1; then confirmed; else cancelled">
+                    </ng-container>
+                    <ng-template #confirmed>
+                      <td>Confirmed</td>
+                    </ng-template>
+                    <ng-template #cancelled>
+                      <td>Cancelled</td>
+                    </ng-template> </em></span>
+                    </td>
+                    <td>{{a.busNumber}}</td>
+                    <td>Before 30 minutes of departure</td>
+                    <td>{{a.departureTime}}</td>
+                  </tr>
+                </table>
+            </div>
+            <div class="row">
+              <p style="color:red">* Please Keep This Copy Of The Ticket During Journey At All Times *</p>
+            </div>
+          </div>
+        </div>
+        <div class="doNotPrint">
+          <button (click)="printPage()" style="margin-left: 50%">Print</button>
+        </div>
+      </ng-container>

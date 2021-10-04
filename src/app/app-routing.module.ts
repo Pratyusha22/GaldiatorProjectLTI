@@ -6,6 +6,7 @@ import { AdminforgotpasswordComponent } from './adminforgotpassword/adminforgotp
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { EnterpassengerdetailsComponent } from './enterpassengerdetails/enterpassengerdetails.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:'Terms Of Use',component:TermsOfUseComponent},
   {path:'Contact Us',component:ContactUsComponent},
   {path:'Login',component:LoginComponent},
+  {path:'userdashboard',component:UserdashboardComponent},
   {path:'Login/ForgotPassword',component:ForgotpasswordComponent},
   {path:'Login/userdashboard',component:UserdashboardComponent},
   {path:'Login/ForgotPassword/Login',component:LoginComponent},
@@ -37,6 +39,13 @@ const routes: Routes = [
   {path:'Sign-Up/userdashboard',component:UserdashboardComponent},
   {path:'Sign-Up/Login',component:LoginComponent},
   {path:'Login/Sign-Up/Login',component:LoginComponent},
+  { path:'Searchbus',component:SearchbusComponent},
+  { path:'Enterpassengerdetails',component:EnterpassengerdetailsComponent},
+  { path:'Payment',component:PaymentComponent},
+  { path:'Payment/userdashboard',component:UserdashboardComponent},
+  { path:'Searchbus',component:SearchbusComponent},
+  { path:'Searchbus/Enterpassengerdetails',component:EnterpassengerdetailsComponent},
+  { path:'Searchbus/Enterpassengerdetails/Payment',component:PaymentComponent},
   {path:'Home/Searchbus',component:SearchbusComponent},
   {path:'Home/Searchbus/Seat',component:SeatComponent},
   {path:'Home/Searchbus/Seat/Payment',component:PaymentComponent},

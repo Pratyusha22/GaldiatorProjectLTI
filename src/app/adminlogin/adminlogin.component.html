@@ -19,12 +19,12 @@
                 
                 <input type="text" class="textbox" placeholder="Password" id="Password"  name="Password"   formControlName="Password"/>
         </p>
-            <div *ngIf="!Password?.valid && (Password?.dirty || Password?.touched)" class="error">
+            <!-- <div *ngIf="!Password?.valid && (Password?.dirty || Password?.touched)" class="error">
                 <div *ngIf="Password?.errors?.pattern">
                     should contain one number,one character and one special
                     character
                 </div>
-            </div>
+            </div> -->
             <div *ngIf="Password?.errors?.minlength">
                 Too short
             </div>

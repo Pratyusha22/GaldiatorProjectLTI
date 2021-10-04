@@ -1,104 +1,89 @@
-<div class="container" style="margin-top:8%">
-    <div class="panel-heading">
-               <div class="col-lg-8">
-                   <h4 style="color: black;">Choose seats by clicking the corresponding seat in the layout below:</h4>
-               </div>
-               <div class="col-lg-2"><a href="#" style="padding: 5px;" class="btn btn-success" id="hrefBackUrl" runat="server" title="Back To Search List"><i class="fa fa-backward"></i>&nbsp;Back To Search List</a></div>
-           </div>
-           <br />
-           <div class="panel-body">
-               <div class="col-lg-8">
-                   <table runat="server">
-                       <tr>
-                           <td style="color:black;font-size:large">Front</td>
-                           <td style="margin-left:5%">
-                               <div id="holder" style="border:none;color:white;overflow:auto">
-                                   <ul id="place" style="margin-top:30%">
-                                   </ul>
-                               </div>
-                           </td>
-                           <td style="color:black;font-size:large">Rear</td>
-                       </tr>
-                   </table>
+<body>
+  
 
-                   <div style="margin-top: 10px;overflow:auto">
-                       <ul id="seatDescription">
-                           <li ><img src="assets/newAvailableSeat.png">Available Seat</li>
-                           <!-- <li style="background: url('assets/bookedseats.png') no-repeat scroll 0 0 transparent; width: 25%; height: 30%; color: white">Booked Seat</li>
-                           <li style="background: url('assets/newSelectedSeat.png') no-repeat scroll 0 0 transparent; width: 25%; height: 30%; color: white">Selected Seat</li> -->
-                       </ul>
-                   </div>
-                   <div style="clear: both; width: 100%; margin-top: 70px;">
-                       <input type="button" id="btnShowNew" value="Show Selected Seats" />
-                       <input type="button" id="btnShow" value="Show All" />
-                   </div>
-               </div>
-               <div class="col-lg-4" style="overflow:auto">
-                   <div class="panel panel-danger">
-                       <div class="panel panel-heading">
-                           <div class="panel panel-title">
-                               <h2>Journey  Details </h2>
-                           </div>
-                       </div>
-                       <div class="panel-body">
-                           Onward Journey
-                   From
-                   <Label ID="lblForm" runat="server" Font-Bold="true"></Label>
-                           To 
-                   <Label ID="lblTo" runat="server" Font-Bold="true" ></Label><br />
-                           on
-                   <Label ID="lbldate" runat="server" Font-Bold="true"></Label><br />
-                           <br />
-                           <div class="col-lg-12">
-                               <table class="table-bordered">
-                                   <tr>
-                                       <td>Selected Seat No</td>
-                                       <td><label id="lblSelectedSeat"></label>
-                                       <Label id="lblSelectedSeat"  Font-Bold="true"></Label></td>
-                                           
-                                        
-                                      <!-- <asp:HiddenField ID="hdnSeatNo" runat="server" ClientIDMode="Static" />
-                                       <asp:HiddenField ID="hdnSeatCount" runat="server" ClientIDMode="Static" />
-                                       <asp:HiddenField ID="hdnSeatTypeID" runat="server" ClientIDMode="Static" />
-                                       <asp:HiddenField ID="hdnFare" runat="server" ClientIDMode="Static" />
-                                       <asp:HiddenField ID="hdnTotalFare" runat="server" ClientIDMode="Static" />-->
-                                   </tr>
-                                    <tr>
-                                       <td>Per Seat Fare</td>
-                                       <td><span><i class="fa fa-rupee"></i></span>
-                                           <Label id="lblPerSeat"  Font-Bold="true" Text="0.00" ></Label>
-                                           </td>
-                                            <label id="lbltotal">0.00</label>
-                                   </tr>
-                                   <tr>
-                                       <td>Amount</td>
-                                       <td><span><i class="fa fa-rupee"></i></span>
-                                           <Label id="lbltotal"  Font-Bold="true" Text="0.00" ></Label>
-                                           </td>
-                                           <label id="lbltotal">0.00</label>
-                                   </tr>
-                               </table>
-                           </div>
-                           <div style="margin-top: 5%" class="col-lg-12">
-                               <Label id="lblBoardingPoint"  Font-Bold="true" Text="Boarding Points"></Label>
-                               <ul ID="ddlBoardingpoints"  Style="width: 100%"></ul><br />
-                               <br />
-                               <Label ID="lblDroppingPoints"  Font-Bold="true" Text="Dropping Points" Style="display: none"></Label>
-                               <ul ID="ddlDroppingpoints"  Style="display: none; width: 70%">
-                                   <li Value="0" Text="Select Dropping Point"></li>
-                               </ul><br />
-                               <br />
-                               <input type="button" id="submit" value="Pay" routerLink='Payment'>
-                               <!--<input type="button" ID="btnPayment" runat="server" Text="Make Payment" CssClass="btn btn-danger" OnClick="btnPayment_Click" ClientIDMode="Static" />-->
-                           </div> 
-                        </div>
-                    </div>
-                </div>
+    <div [ngClass]="{container:1}" >
+ 
+   <div class="info">
+   Your selection : <button class="blue"> </button> <br>
+    Available seats : <button class="green"></button> <br>
+ 
+   </div>
+ 
+   <div class="container-fluid">
+       <h3>Book Seats</h3>
+       
+       <div class="business">
+           <div class="col1">
+            <div class="button_row">
+                <button  [ngClass]="{blue:new[2],green:!new[2],red:old[2]}" (click)="selected()">A1</button> 
+               <button [ngClass]="{blue:new[2],green:!new[2],red:old[2]}" (click)="selected()">A2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+               <button [ngClass]="{blue:new[3],green:!new[3],red:old[3]}" (click)="selected()">A3</button>  
+               <button [ngClass]="{blue:new[4],green:!new[4],red:old[4]}" (click)="selected()">A4</button><br>
             </div>
-        </div>
-                        
-                   
-               
-        
-
-
+            <div class="button_row">
+              
+               <button [ngClass]="{blue:new[5],green:!new[5],red:old[5]}" (click)="selected()">B1</button>
+               <button [ngClass]="{blue:new[6],green:!new[6],red:old[6]}" (click)="selected()">B2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+               <button [ngClass]="{blue:new[7],green:!new[7],red:old[7]}" (click)="selected()">B3</button>
+               <button [ngClass]="{blue:new[8],green:!new[8],red:old[8]}" (click)="selected()">B4</button> <br>
+            </div>  
+            <div class="button_row">
+             
+             
+             <button [ngClass]="{blue:new[9],green:!new[9],red:old[9]}" (click)="changeEco(9)">C1</button> 
+             <button [ngClass]="{blue:new[10],green:!new[10],red:old[10]}" (click)="changeEco(10)">C2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+           <button [ngClass]="{blue:new[11],green:!new[11],red:old[11]}" (click)="changeEco(11)">C3</button>
+           <button [ngClass]="{blue:new[12],green:!new[12],red:old[12]}" (click)="changeEco(12)">C4</button> <br>
+          </div> 
+ 
+          <div class="button_row">
+            <button [ngClass]="{blue:new[13],green:!new[13],red:old[13]}" (click)="changeEco(13)">D1</button>
+            <button [ngClass]="{blue:new[14],green:!new[14],red:old[14]}" (click)="changeEco(14)">D2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            <button [ngClass]="{blue:new[15],green:!new[15],red:old[15]}" (click)="changeEco(15)">D3</button>
+            <button [ngClass]="{blue:new[16],green:!new[16],red:old[16]}" (click)="changeEco(16)">D4</button><br>
+        </div> 
+         
+        <div class="button_row">
+             
+         <button [ngClass]="{blue:new[17],green:!new[17],red:old[17]}" (click)="changeEco(17)">E1</button>
+         <button [ngClass]="{blue:new[18],green:!new[18],red:old[18]}" (click)="changeEco(18)">E2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+         <button [ngClass]="{blue:new[19],green:!new[19],red:old[19]}" (click)="changeEco(19)">E3</button>
+     <button [ngClass]="{blue:new[20],green:!new[20],red:old[20]}" (click)="changeEco(20)">E4</button> <br>
+      </div> 
+ 
+ 
+      <div class="button_row">
+         <button [ngClass]="{blue:new[21],green:!new[21],red:old[21]}" (click)="changeEco(21)">F1</button>
+         <button [ngClass]="{blue:new[22],green:!new[22],red:old[22]}" (click)="changeEco(22)">F2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+         <button [ngClass]="{blue:new[23],green:!new[23],red:old[23]}" (click)="changeEco(23)">F3</button>
+         <button [ngClass]="{blue:new[24],green:!new[24],red:old[24]}" (click)="changeEco(24)">F4</button>
+        <br>
+    </div> 
+ 
+    <div class="button_row">
+             
+     <button [ngClass]="{blue:new[25],green:!new[25],red:old[25]}" (click)="changeEco(25)">G1</button>
+     <button [ngClass]="{blue:new[26],green:!new[26],red:old[26]}" (click)="changeEco(26)">G2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+     <button [ngClass]="{blue:new[27],green:!new[27],red:old[27]}" (click)="changeEco(27)">G3</button>
+     <button [ngClass]="{blue:new[28],green:!new[28],red:old[28]}" (click)="changeEco(28)">G4</button>
+      <br>
+  </div> 
+ 
+  <div class="button_row">
+             
+   <button [ngClass]="{blue:new[29],green:!new[29],red:old[29]}" (click)="changeEco(29)">H1</button>
+   <button [ngClass]="{blue:new[30],green:!new[30],red:old[30]}" (click)="changeEco(30)">H2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+   <button [ngClass]="{blue:new[31],green:!new[31],red:old[31]}" (click)="changeEco(31)">H3</button> 
+   <button [ngClass]="{blue:new[32],green:!new[32],red:old[32]}" (click)="changeEco(32)">H4</button> <br>
+ </div> 
+           </div>
+       </div>
+       <hr>
+       <b>Total fare-</b> {{current_cost}}
+       
+   </div>
+   <div><input type="button" id="button" value="Procced to Book" ><a routerLink='Enterpassengerdetails'></a></div>   
+   <div>
+     <button type="button" class="btn btn-success"  (click)="pay()"   routerLink='Payment'>Pay</button>
+    
+   </div> 

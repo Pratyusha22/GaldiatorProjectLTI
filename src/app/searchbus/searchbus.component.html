@@ -1,24 +1,143 @@
-<div [ngStyle]="{'background-color':'azure'}"><table>
-    <tr>
-        <td><h3>Travels</h3></td>
-        <td><h3>From</h3></td>
-        <td><h3>Date</h3></td>
-        <td><h3>Arrival</h3></td>
-        <td><h3>Departure</h3></td>
-        <td><h3>To</h3></td>
-        <td><h3>Seats Available</h3></td>
-        <td><h3>Fare</h3></td>
-        <td> </td>
-    </tr>
+<div class="container" style="text-align: center;">
+    
+      
+     
+  
+          
+  <form id="bus-form" [formGroup] = "SearchBusForm"  (ngSubmit)="SearchBus()">
+  
+    <div  *ngIf="!message">
+  
+        
+        
+        <table>
+          <tr>
+             
+        <div id="bus-depart">
+          <td><div >
+            <label for="" >FROM</label>
+            <select  id="Startingpt" name="Startingpt"  formControlName="Startingpt">
+              <option value="Mumbai">Mumbai</option>
+              <option value="Pune">Pune</option>
+              <option value="Goa">Goa</option>
+              <option value="Bangalore">Bangalore</option>
+            </select>
+            </div>
+          </td>
+          <td><div id="arrive-box">
+            <label for="" >DESTINATION</label>
+            <select id="Destination" name="Destination" #fn formControlName="Destination" >
+              <option value="Mumbai">Mumbai</option>
+              <option value="Pune">Pune</option>
+              <option value="Goa">Goa</option>
+              <option value="Bangalore">Bangalore</option>
+            </select>
+          </div></td>
+        </div>
+        
+        
+        <div id="bus-dates">
+          <td><div >
+              <label for="">SCHEDULED DATE</label>
+              <input type="date" id="Departuredate" name="ScheduledDate" #fn formControlName="ScheduledDate"  />
+            </div></td>
+         </div>
+        
+      </tr>
+      </table>
+      <!-- <div class="filter-titles f-12 f-bold">DEPARTURE TIME</div>
+      <ul class="dept-time dt-time-filter">
+        <li data-value="" class="checkbox">
+          <input type="checkbox" id="dtBefore 6 am">
+          <label for="dtBefore 6 am" class="custom-checkbox"></label>
+          <span><i class="icon fl icon-morning"></i></span>
+          <label for="dtBefore 6 am" class="cbox-label" title="Before 6 am"> 6 am to 5pm </label></li>
+        <li data-value="" class="checkbox">
+          <input type="checkbox" id="dt6 am to 12 pm">
+          <label for="dt6 am to 12 pm" class="custom-checkbox"></label>
+          <span><i class="icon fl icon-afternoon"></i></span>
+          <label for="dt6 am to 12 pm" class="cbox-label" title="6 am to 12 pm">After 5pm</label></li>
+       
+      </ul>
+      <div class="filter-titles f-12 f-bold">ARRIVAL TIME</div>
+      <ul class="dept-time at-time-filter">
+      <li data-value="" class="checkbox">
+          <input type="checkbox" id="atBefore 6 am">
+          <label for="atBefore 6 am" class="custom-checkbox">
 
-<tr *ngFor="let a of data">
-    <td>{{travels}}</td>
-    <td>{{a.from}}</td>
-    <td>{{a.date}}</td>
-    <td>{{a.arrival}}</td>
-    <td>{{a.departure}}</td>
-    <td>{{a.to}}</td>
-    <td>{{a.seatsavilable}}</td>
-    <td>{{a.fare}}</td>
-    <td><input  type="button" id="button" value="View Seats" routerLink='Seat'></td></tr></table></div>
+          </label><span><i class="icon fl icon-morning"></i></span>
+          <label for="atBefore 6 am" class="cbox-label" title="Before 6 am"> Before 6 pm</label></li>
+       <li data-value="" class="checkbox"><input type="checkbox" id="at6 am to 12 pm">
+        <label for="at6 am to 12 pm" class="custom-checkbox">
 
+        </label><span><i class="icon fl icon-afternoon"></i></span>
+        <label for="at6 am to 12 pm" class="cbox-label" title="6 am to 12 pm">After 6 pm </label></li>
+       </ul>
+         -->
+      <div id="bus-search">
+        <div class="info-box">
+          <input type="submit" id="search-bus" value="Show bus"/>
+        </div>
+     </div>
+
+
+     
+      </div>
+  
+  
+      
+      <div *ngIf="message"> 
+        
+       <table>
+        <tr>
+      
+          <td><h3>Starting Point</h3></td>
+          
+          <td><h3>Destination</h3></td>
+          <td><h3>ScheduledDate</h3></td>
+          
+          <td><h3>DepartureTime</h3></td>
+          <td><h3>ArrivalTime</h3></td>
+          
+          <td><h3>FareAmount</h3></td>
+          <td><h3>Bus Id</h3></td>
+          <td> </td>
+      </tr> </table>
+         
+        <div  *ngFor="let items of bus">
+          
+          <table>
+            <tr>
+              <td>{{items.startingpt}}</td>
+              <td>{{items.destination}}</td>
+              <td>{{items.scheduledDate}}</td>
+      
+              <td>{{items.departureTime}}</td>
+              <td>{{items.arrivalTime}}</td>
+      
+              <td>{{items.fareAmount}}</td>
+              <td>{{items.busId}}</td>
+              
+
+            
+
+             
+           <td><input type="button" value="Book" (click)="getId(items.scheduleId)"></td>
+            </tr>
+          </table>  
+          <ng-container *ngIf="show">
+          <div>
+            <label for="seatcount">Enter Number Of Seats To Be Booked</label>
+            <input type="number"  #seatcount  value="Enter number of seats" />
+            <button (click)="pay(seatcount.value)">Proceed To Pay</button>
+            </div>
+          </ng-container>
+  </div>
+         <button  (click)="back()" > Back</button>
+      </div>
+
+  
+    </form>
+  
+
+</div>

@@ -4,14 +4,14 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        Choose Your Payment Mode
+                        Payment 
                     </h3>
                     <hr>
                 </div>
                 <ul class=" nav nav-pills nav-stacked">
                     <li class="active" style="text-align: center;"><label
                             style="font-weight: bold; font-size: 20px;">&nbsp; Amount to be paid:</label>
-                        <label> &nbsp;  550 Rs.</label>
+                         {{Fare}}
                     </li>
                 </ul>
                 <div class="panel-body">
@@ -43,24 +43,13 @@
                                     </div>
                                 </div><br>
 
-                                <input type="button" id="=button" value="Pay"  routerLink='userdashboard' style="background-color: green;">
+                                <input type="button" (click)="submitForm()" id="=button" value="Pay" routerLink='userdashboard' style="background-color: green;">
                             </div>
                         </div>
 
                     </div>
                 </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <div class="col-xs-15 col-md-8">
-                            <div id="wallet">
-                                <label style="font-weight: bold; font-size: 20px;">Wallet Amount:</label>
-                                <label>500Rs.</label><br>
-                                <input type="button" id="=button" value="Pay" routerLink='userdashboard' style="background-color: green;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                
             </div>
 
         </div>

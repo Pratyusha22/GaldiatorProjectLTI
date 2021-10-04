@@ -1,5 +1,12 @@
-<div style="text-align: left; background-color:azure; padding: 5px; font-family: Arial, Helvetica, sans-serif ;">
-    <h1 ><img src="https://image.shutterstock.com/image-vector/bus-head-logo-260nw-673063534.jpg" height="5%" width="5%">LTI TRAVELS</h1><div style="text-align: right; "><a routerLink='Admin Login' style="color:black">Admin Login</a> </div>
+<div style="text-align: left; background-color:azure; padding: 3px; font-family: Arial, Helvetica, sans-serif ;">
+  
+    <h1 ><img src="\assets\logo.png" height="5%" width="5%">LTI TRAVELS</h1>
+    <div style="text-align: right; "><!-- <a routerLink='Login' style="color:black">Login</a>
+        <a routerLink='Sign-Up' style="color:black">Sign-Up</a> -->
+        <a routerLink='Admin Login' style="color:black">Admin Login</a> 
+        
+    </div>
+    
 </div>
 
 <!-- <div style="background-color: blue; padding: 15px; font-family:sans-serif;">
@@ -15,9 +22,10 @@
 <div *ngIf="!message" [ngStyle]="{'background-color':'blue'}" style="padding:15px">
     <!--<ul style="background-color: blue; padding: 15px; font-family:sans-serif;text-align: left; ">   -->    
        
-        <a routerLink='Home' style="color:black">Home</a> <a routerLink='About Us' style="color:black">About Us</a><a routerLink='Terms Of Use' style="color:black">Terms Of Use</a><a routerLink='Contact Us' style="color:black">Contact Us</a>  
-        <a routerLink='Login' style="color:black">Login</a>
-        <a routerLink='Sign-Up' style="color:black">Sign-Up</a>
+        <a routerLink='Home' style="color:white ; font-weight: bold;">Home</a> <a routerLink='About Us' style="color:white;font-weight: bold;">About Us</a><a routerLink='Terms Of Use' style="color:white;font-weight: bold;">Terms Of Use</a><a routerLink='Contact Us' style="color:white;font-weight: bold;">Contact Us</a>  
+        <a routerLink='Login' style="color:white;font-weight: bold;">Login</a>
+        <a routerLink='Sign-Up' style="color:white;font-weight: bold;">Sign-Up</a>
+        <a routerLink='Searchbus' style="color:white;font-weight: bold;">Book Bus</a>
          
        
    </div> 
@@ -28,7 +36,7 @@
 <div *ngIf="message">
     <div style="background-color: blue; padding: 15px; font-family:sans-serif;text-align: left; ">  
         Welcome {{user}}
-        <a routerLink='About Us' style="color:black">About Us</a><a routerLink='Terms Of Use' style="color:black">Terms Of Use</a><a routerLink='Contact Us' style="color:black">Contact Us</a> 
+        <a routerLink='About Us' style="color:black">About Us</a><a routerLink='Terms Of Use' style="color:black">Terms Of Use</a><a routerLink='Contact Us' style="color:black">Contact Us</a><a routerLink='Searchbus' style="color:black">Book Bus</a> 
         
             <a [routerLink]=" "  (click)='logout()' [ngStyle]="{'background-color':'blue'}" style="color:black">Logout</a>
     </div>

@@ -1,0 +1,120 @@
+<h3 [align]="'center'">Passenger Details</h3>
+<br><br>
+
+<div [align]="'center'">
+<h4>Passenger Information</h4>
+
+    <form [formGroup]="PassengerForm" (ngSubmit)="DisplayPassenger()" id="form" >
+
+        
+        <p >
+            
+            <input type="text"  class="textbox"   placeholder=" Name" id="PassengerName" required minlength="5"  
+             name="name" formControlName="name"/>
+        </p>
+        <div *ngIf="!name?.valid && (name?.dirty || name?.touched)" class="error">
+            <div *ngIf="name?.errors?.required">
+                Please enter Name  
+            </div>
+        </div>
+        <div *ngIf="name?.errors?.minlength">
+            FirstName minilength is 5
+        </div>
+        
+        
+        <p >
+            
+            <input type="text" class="textbox"  placeholder="Email Address"  required id="email" name="email" formControlName="email" />
+     </p>
+        <div *ngIf="!email?.valid && (email?.dirty || email?.touched)" class="error">
+            <div *ngIf="email?.errors?.pattern">
+                Please enter correct email
+            </div>
+            <div *ngIf="!email?.valid && (email?.dirty || email?.touched)" class="error">
+                <div *ngIf="email?.errors?.required">
+                 Email is required 
+                </div>
+            </div>
+            
+        </div>
+        <p >
+            
+            <input type="number" class="textbox"  placeholder="Age"  required id="age" name="age" formControlName="age" />
+     </p>
+     
+    <p >
+            
+        <input type="text" class="textbox"  placeholder="Gender"  required id="gender" name="gender" formControlName="gender" />
+ </p>
+ 
+             <p >
+                
+                <input type="tel" class="textbox"  placeholder="contact Number"  id="contact" name="contact" formControlName="contact" />
+             </p>  
+             <div *ngIf="!contact?.valid && (contact?.dirty || contact?.touched)" class="error">
+                <div *ngIf="contact?.errors?.pattern">
+                  it should only contain numbers
+                </div>
+            </div>
+            
+            <div *ngIf="contact?.errors?.maxlength">
+                maxlength is 10
+             </div>
+             <p >
+            
+                <input type="number" class="textbox"  placeholder="Number Of Passengers"  required id="numberOfPassenger" name="numberOfPassengers" formControlName="numberOfPassengers" />
+         </p>
+         
+    
+    <div >
+            <input type="submit"  id="regbtn"  value="Confirm Passenger Details">
+            
+        </div>
+
+
+        <div *ngIf="message"> 
+              
+            <table>
+             <tr>
+           
+               <td><h3>Passenger Name </h3></td>
+               
+               <td><h3>Email</h3></td>
+               <td><h3>Age</h3></td>
+               
+               <td><h3>Gender</h3></td>
+               <td><h3>Contact No</h3></td>
+               <td><h3> Number of Seats Booked</h3></td>
+               <td><h3> Bus Id</h3></td>
+               
+               <!-- <td><h3>FareAmount</h3></td> -->
+               <td> </td>
+           </tr> </table>
+              
+             <div>
+               
+               <table>
+                 <tr>
+                   <td>{{passenger.name}}</td>
+                   <td>{{passenger.email}}</td>
+                   <td>{{passenger.age}}</td>
+           
+                   <td>{{passenger.gender}}</td>
+                   <td>{{passenger.contact}}</td>
+                   <td>{{passenger.numberOfPassengers}}</td>
+                   
+           
+                   
+                   </tr>
+                   </table>
+                </div>
+                   </div>
+        <div>
+            
+             
+             <!-- <button type="button" class="btn btn-success"  (click)="payment()"   routerLink='Payment'>Pay</button>  -->
+           
+          </div> 
+        
+    </form>
+</div>
